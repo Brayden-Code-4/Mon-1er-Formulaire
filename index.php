@@ -24,12 +24,12 @@
 
             <div class="form-group">
                 <label for="telephone">Numéro de téléphone</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="+228 90 12 34 56" required >
+                <input type="tel" id="telephone" name="telephone" placeholder="+228 90 12 34 56"  pattern="^\+228[0-9]{8}$" required >
             </div>
 
             <div class="form-group">
                 <label for="date_naissance">Date de naissance</label>
-                <input type="date" id="date_naissance" name="date_naissance" max="2008-12-31" required>
+                <input type="date" id="date_naissance" name="date_naissance" max="2010-12-31" required>
             </div>
 
             <div class="form-group">
@@ -47,5 +47,10 @@
         </form>
     </div>
 
+    <script>
+document.getElementById('telephone').addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9+]/g, '');
+});
+</script>
 </body>
 </html>
